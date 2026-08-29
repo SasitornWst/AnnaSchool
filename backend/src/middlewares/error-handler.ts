@@ -1,15 +1,13 @@
-import { type ErrorRequestHandler } from 'express';
+import type { ErrorRequestHandler } from "express";
+import { sendError } from "../utils/api-response.ts";
 
 export const errorHandler: ErrorRequestHandler = (
   error,
   _request,
   response,
-  _next
+  _next,
 ) => {
   console.error(error);
 
-  response.status(500).json({
-    success: false,
-    message: 'Internal server error'
-  });
+  sendError(response, 500, "Internal server error");
 };

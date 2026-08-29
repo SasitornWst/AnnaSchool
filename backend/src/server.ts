@@ -1,8 +1,16 @@
 import cors from "cors";
 import express from "express";
 import { errorHandler } from "./middlewares/error-handler.ts";
-
 import { databasePool } from "./config/database.ts";
+import { sendError, sendSuccess } from "./utils/api-response.ts";
+import { authRouter } from "./routes/auth-route.ts";
+import { publicRouter } from "./routes/public-route.ts";
+import {
+  adminApplicationRouter,
+} from "./routes/admin-application-route.ts";
+import {
+  adminParentRouter,
+} from "./routes/admin-parent-route.ts";
 
 const serverPort = Number(process.env.PORT);
 const corsOrigin = process.env.CORS_ORIGIN;
@@ -24,14 +32,17 @@ app.use(
 );
 
 app.use(express.json());
-app.use(errorHandler);
+app.use("/api/auth", authRouter);
+app.use("/api/public", publicRouter);
+app.use(
+  "/api/admin/applications",
+  adminApplicationRouter,
+);
+app.use("/api/admin/parents", adminParentRouter);
 
 // ทดสอบ server
 app.get("/api/health", (_request, response) => {
-  response.status(200).json({
-    success: true,
-    message: "Server is running",
-  });
+  sendSuccess(response, 200, "Server is running");
 });
 
 // ทดสอบ database
@@ -39,20 +50,21 @@ app.get("/api/health/database", async (_request, response, next) => {
   try {
     const [rows] = await databasePool.execute("SELECT 1 AS connected");
 
-    response.status(200).json({
-      success: true,
-      message: "Database is connected",
-      data: rows,
-    });
+    sendSuccess(response, 200, "Database is connected", rows);
   } catch (error) {
     next(error);
   }
 });
 
-app.get("/api/health/error", () => {
-  throw new Error("Test error handling");
+
+app.use((_request, response) => {
+  sendError(response, 404, "Route not found");
 });
+
+
+
 app.use(errorHandler);
+
 
 async function startServer(): Promise<void> {
   try {

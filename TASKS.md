@@ -109,8 +109,8 @@
 - [x] เชื่อม MySQL
 - [x] สร้าง Endpoint ทดสอบ Server
 - [x] สร้าง Endpoint ทดสอบ Database
-- [ ] จัด Error Handling เบื้องต้น
-- [ ] กำหนดรูปแบบ API Response
+- [x] จัด Error Handling เบื้องต้น
+- [x] กำหนดรูปแบบ API Response
 
 **Postman Gate:** Endpoint ทดสอบต้องผ่านก่อนทำ Module ธุรกิจ
 
@@ -118,22 +118,22 @@
 
 # Phase 5 — Authentication / Authorization
 
-- [ ] ทำ Password Hashing
-- [ ] ทำ Login
-- [ ] ทดสอบ Login สำเร็จ
-- [ ] ทดสอบ Password ผิด
-- [ ] ทดสอบ User ไม่มีอยู่
-- [ ] ทดสอบบัญชีไม่ Active/ยังไม่อนุมัติ
-- [ ] ทำ Authentication Token/Session ตามแนวทางที่เลือก
-- [ ] ทำ Middleware ตรวจตัวตน
-- [ ] ทำ Role Authorization
-- [ ] ทดสอบ Admin
-- [ ] ทดสอบ Teacher
-- [ ] ทดสอบ Parent
-- [ ] ทดสอบ 401
-- [ ] ทดสอบ 403
-- [ ] ทำ Logout ตาม Architecture ที่เลือก
-- [ ] ทำเปลี่ยน Password
+- [x] ทำ Password Hashing
+- [x] ทำ Login
+- [x] ทดสอบ Login สำเร็จ
+- [x] ทดสอบ Password ผิด
+- [x] ทดสอบ User ไม่มีอยู่
+- [x] ทดสอบบัญชีไม่ Active/ยังไม่อนุมัติ
+- [x] ทำ Authentication Token/Session ตามแนวทางที่เลือก
+- [x] ทำ Middleware ตรวจตัวตน
+- [x] ทำ Role Authorization
+- [x] ทดสอบ Admin
+- [x] ทดสอบ Teacher
+- [x] ทดสอบ Parent
+- [x] ทดสอบ 401
+- [x] ทดสอบ 403
+- [x] ทำ Logout ตาม Architecture ที่เลือก
+- [x] ทำเปลี่ยน Password
 
 **Security Gate:** Parent ต้องไม่สามารถเปิดข้อมูล Student ของ Parent คนอื่นได้
 
@@ -141,31 +141,31 @@
 
 # Phase 6 — ระบบสมัครเรียน
 
-- [ ] API รายการคอร์ส Public
-- [ ] API รายละเอียดคอร์ส Public
-- [ ] API ส่งใบสมัคร
-- [ ] รองรับผู้ปกครองหนึ่งคน + นักเรียนมากกว่า 1 คน
-- [ ] Validation ใบสมัคร
-- [ ] API Admin ดูรายการสมัคร
-- [ ] API Admin ดูรายละเอียดใบสมัคร
-- [ ] API เปลี่ยนสถานะใบสมัคร
-- [ ] Flow หลังพูดคุยกับผู้ปกครอง
-- [ ] ทดสอบ Postman ทุก Endpoint
+- [x] API รายการคอร์ส Public
+- [x] API รายละเอียดคอร์ส Public
+- [x] API ส่งใบสมัคร
+- [x] รองรับผู้ปกครองหนึ่งคน + นักเรียนมากกว่า 1 คน
+- [x] Validation ใบสมัคร
+- [x] API Admin ดูรายการสมัคร
+- [x] API Admin ดูรายละเอียดใบสมัคร
+- [x] API เปลี่ยนสถานะใบสมัคร
+- [x] Flow หลังพูดคุยกับผู้ปกครอง
+- [x] ทดสอบ Postman ทุก Endpoint
 
 ---
 
 # Phase 7 — บัญชีผู้ปกครอง
 
-- [ ] API ลงทะเบียน Parent ด้วยตนเอง
-- [ ] สถานะรออนุมัติ
-- [ ] API Admin ดูคำขอลงทะเบียน
-- [ ] API Admin อนุมัติ
-- [ ] API Admin ปฏิเสธ
-- [ ] API Admin สร้างบัญชี Parent
-- [ ] Generate Username/Password หากเลือกใช้
-- [ ] เชื่อม Parent กับ Student ที่ถูกต้อง
-- [ ] ทดสอบบัญชีที่ยังไม่อนุมัติ Login ไม่ได้
-- [ ] ทดสอบบัญชีที่อนุมัติ Login ได้
+- [x] API ลงทะเบียน Parent ด้วยตนเอง
+- [x] สถานะรออนุมัติ
+- [x] API Admin ดูคำขอลงทะเบียน
+- [x] API Admin อนุมัติ
+- [x] API Admin ปฏิเสธ
+- [x] API Admin สร้างบัญชี Parent
+- [x] Generate Username/Password หากเลือกใช้
+- [x] เชื่อม Parent กับ Student ที่ถูกต้อง
+- [x] ทดสอบบัญชีที่ยังไม่อนุมัติ Login ไม่ได้
+- [x] ทดสอบบัญชีที่อนุมัติ Login ได้
 
 ---
 
