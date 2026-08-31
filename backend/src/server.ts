@@ -15,6 +15,9 @@ import { adminClassRouter } from "./routes/admin-class-route.ts";
 import { adminEnrollmentRouter } from "./routes/admin-enrollment-route.ts";
 import { adminScheduleRouter } from "./routes/admin-schedule-route.ts";
 import { parentRouter } from "./routes/parent-route.ts";
+import { adminStudentRouter } from "./routes/admin-student-route.ts";
+import { adminPaymentRouter } from "./routes/admin-payment-route.ts";
+import { parentPaymentRouter } from "./routes/parent-payment-route.ts";
 
 const serverPort = Number(process.env.PORT);
 const corsOrigin = process.env.CORS_ORIGIN;
@@ -41,13 +44,16 @@ app.use("/api/public", publicRouter);
 app.use("/api/admin/applications", adminApplicationRouter);
 app.use("/api/admin/parents", adminParentRouter);
 app.use("/api/admin/teachers", adminTeacherRouter);
-app.use("/api/teacher", teacherRouter);
 app.use("/api/admin/courses", adminCourseRouter);
 app.use("/api/admin/levels", adminLevelRouter);
 app.use("/api/admin/classes", adminClassRouter);
 app.use("/api/admin/enrollments", adminEnrollmentRouter);
 app.use("/api/admin/schedules", adminScheduleRouter);
+app.use("/api/admin/students", adminStudentRouter);
+app.use("/api/admin/payments", adminPaymentRouter);
+app.use("/api/teacher", teacherRouter);
 app.use("/api/parent", parentRouter);
+app.use("/api/parent/payments", parentPaymentRouter);
 
 // ทดสอบ server
 app.get("/api/health", (_request, response) => {

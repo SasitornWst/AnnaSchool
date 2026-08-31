@@ -4,3 +4,5 @@ dist/
 .env.*
 !.env.example
 *.log
+private/payment-proofs/*
+!private/payment-proofs/.gitkeep
